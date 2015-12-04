@@ -39,8 +39,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         String myMapID = "mapbox.dark";
-        String accesToken = "accesstoken";
-        MapBoxOnlineTileProvider provider = new MapBoxOnlineTileProvider(myMapID, accesToken);
+        String accessToken = BuildConfig.MAPBOX_ACCESS_TOKEN;
+        MapBoxOnlineTileProvider provider = new MapBoxOnlineTileProvider(myMapID, accessToken);
         mMap.addTileOverlay(new TileOverlayOptions()
                 .tileProvider(provider));
         // Add a marker in Sydney and move the camera
