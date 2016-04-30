@@ -37,12 +37,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
         String myMapID = "mapbox.dark";
         String accessToken = BuildConfig.MAPBOX_ACCESS_TOKEN;
         MapBoxOnlineTileProvider provider = new MapBoxOnlineTileProvider(myMapID, accessToken);
+        mMap = googleMap;
         mMap.addTileOverlay(new TileOverlayOptions()
-                .tileProvider(provider));
+                .tileProvider(provider)
+                .fadeIn(false));
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
